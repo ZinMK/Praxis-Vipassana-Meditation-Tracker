@@ -16,6 +16,7 @@ void main() async {
   await Hive.initFlutter();
 
   await Hive.openBox("meditation");
+
   await Hive.openBox("settings");
   await Hive.openBox("messages");
 

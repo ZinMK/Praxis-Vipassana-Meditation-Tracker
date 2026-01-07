@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -219,20 +221,51 @@ class MeditationDayHiveDB {
         continue;
       }
     }
+    print(sum_Complete_days);
     return sum_Complete_days;
   }
 
+  static String meditationDayHourFormatter(
+    int meditationDays,
+    int meditationMinutes,
+    bool value,
+  ) {
+    String Dstatus = '';
+    String Hstatus = '';
+
+    if (meditationDays > 365) {
+      //if Total meditaiton days are above a month
+    } else if (meditationDays > 30) {}
+    return '';
+  }
+
   // Format meditation days to larger units (days -> months -> years)
-  static String formatMeditationDays(int totalDays) {
-    if (totalDays >= 365) {
-      final years = (totalDays / 365).round();
-      return years == 1 ? "1 year" : "$years years";
-    } else if (totalDays >= 30) {
-      final months = (totalDays / 30).round();
-      return months == 1 ? "1 month" : "$months months";
+  static String formatMeditationDays(int totalDays, String format) {
+    if (format == 'd') {
+      return "$totalDays days";
+    } else if (format == 'w') {
+      int weeks = (totalDays / 7).round();
+
+      return weeks == 0 ? "$totalDays days" : "$weeks weeks";
+    } else if (format == 'm') {
+      int months = (totalDays / 30).round();
+
+      return months == 0 ? "$totalDays days" : "$months months";
+    } else if (format == 'y') {
+      int years = (totalDays / 365).round();
+      return years == 0 ? "$totalDays days" : "$years years";
     } else {
-      return totalDays == 1 ? "1 day" : "$totalDays days";
+      return "$totalDays days";
     }
+    // if (totalDays >= 365) {
+    //   final years = (totalDays / 365).round();
+    //   return years == 1 ? "1 year" : "$years years";
+    // } else if (totalDays >= 30) {
+    //   final months = (totalDays / 30).round();
+    //   return months == 1 ? "1 month" : "$months months";
+    // } else {
+    //   return totalDays == 1 ? "1 day" : "$totalDays days";
+    // }
   }
 
   // Format meditation hours to smaller units (hours -> days -> weeks)

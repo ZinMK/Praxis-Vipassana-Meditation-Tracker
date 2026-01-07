@@ -163,7 +163,7 @@ class _NavbarState extends State<Navbar> {
               overflow: TextOverflow.visible,
               "calendar",
               style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                fontSize: 11,
+                fontSize: fontsize,
                 fontWeight: FontWeight.w600,
                 color: const Color.fromARGB(255, 77, 51, 7),
               ),

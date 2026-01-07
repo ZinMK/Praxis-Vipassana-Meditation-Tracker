@@ -7,8 +7,7 @@ import 'package:meditation_scheduler/Contants.dart';
 import 'package:meditation_scheduler/HiveDb.dart';
 import 'package:meditation_scheduler/HiveMessages.dart';
 import 'package:meditation_scheduler/Provider/meditation_provider.dart';
-import 'package:meditation_scheduler/Settings.dart';
-import 'package:meditation_scheduler/calendar.dart';
+
 import 'package:meditation_scheduler/navigationBar.dart';
 
 import 'package:meditation_scheduler/widgets/TimerBar.dart';
@@ -65,6 +64,7 @@ class _FeedPageState extends ConsumerState<FeedPage> {
                               return InfoTab(
                                 input: MeditationDayHiveDB.formatMeditationDays(
                                   MeditationDayHiveDB.getTotalMeditationDays(),
+                                  'w',
                                 ),
                               );
                             },
