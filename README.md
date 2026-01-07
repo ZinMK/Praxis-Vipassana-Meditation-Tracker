@@ -1,6 +1,6 @@
 # Praxis Vipassana Meditation Tracker
 
-![Screenshot 1](ss1.png) ![Screenshot 2](ss2.png) ![Screenshot 3](ss3.png)
+![Screenshots](screenshots.png)
 
 A Flutter mobile application for tracking daily Vipassana meditation practice. The app helps users maintain a consistent meditation schedule by tracking morning and evening sessions, providing meditation timers with audio support, and maintaining a calendar view of practice history.
 
